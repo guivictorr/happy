@@ -31,7 +31,7 @@ export const animations = {
 
   slideFromRight: {
     initial: {
-      x: '-100vw',
+      x: '-10vw',
       opacity: 0,
     },
 

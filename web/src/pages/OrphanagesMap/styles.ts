@@ -4,9 +4,14 @@ import { motion } from 'framer-motion';
 export const Container = styled(motion.div)`
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
 
   position: relative;
   display: flex;
+
+  .leaflet-container {
+    z-index: 5;
+  }
 
   aside {
     width: 440px;
@@ -43,6 +48,7 @@ export const Container = styled(motion.div)`
     position: absolute;
     right: 40px;
     bottom: 40px;
+    z-index: 10;
     width: 64px;
     height: 64px;
     background: #15c3d6;
