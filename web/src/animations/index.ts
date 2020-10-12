@@ -31,7 +31,7 @@ export const animations = {
 
   slideFromRight: {
     initial: {
-      x: '-10vw',
+      x: '-100vw',
       opacity: 0,
     },
 
@@ -40,7 +40,7 @@ export const animations = {
       opacity: 1,
       transition: {
         type: 'spring',
-        stiffness: 40,
+        stiffness: 30,
       },
     },
   },
@@ -71,6 +71,10 @@ export const animations = {
         when: 'beforeChildren',
         duration: 1.2,
       },
+    },
+    exit: {
+      opacity: 0,
+      transition: { ease: 'easeInOut' },
     },
   },
 };
