@@ -1,28 +1,48 @@
 import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+
 import { Container } from './styles';
+
+import { animations } from '../../animations';
 
 import logo from '../../assets/images/logo.svg';
 
 const Landing: React.FC = () => {
+  const { slideFromRight, slideFromTop, opacity, slideFromLeft } = animations;
+
   return (
     <Container>
-      <div>
-        <img src={logo} alt="Happy" />
-        <main>
+      <motion.div initial="initial" animate="final" variants={opacity}>
+        <motion.img
+          src={logo}
+          alt="Happy"
+          initial="initial"
+          animate="final"
+          variants={slideFromTop}
+        />
+        <motion.main
+          initial="initial"
+          animate="final"
+          variants={slideFromRight}
+        >
           <h1>Leve felicidade para o mundo</h1>
           <p>Visite orfanatos e mude o dia de muitas crianças.</p>
-        </main>
+        </motion.main>
 
-        <section>
+        <motion.section
+          initial="initial"
+          animate="final"
+          variants={slideFromLeft}
+        >
           <strong>Natal</strong>
           <span>Rio Grande do Norte</span>
-        </section>
+        </motion.section>
 
         <a href="/">
           <FiArrowRight size={26} color="rgba(0,0,0,0.6)" />
         </a>
-      </div>
+      </motion.div>
     </Container>
   );
 };
