@@ -16,12 +16,34 @@ export const Container = styled.div`
     max-width: 1100px;
     height: 100%;
     max-height: 680px;
+    margin: 50px;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     background: url(${landingImage}) no-repeat 80% center;
+
+    @media (max-width: 1130px) {
+      background: transparent;
+      margin: 0 120px;
+    }
+
+    @media (max-width: 770px) {
+      background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+      align-items: center;
+      max-height: 90%;
+
+      a {
+        position: relative;
+      }
+
+      section {
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+      }
+    }
   }
 
   main {
