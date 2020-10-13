@@ -43,6 +43,10 @@ export default class createOrphanages1602599281866
             type: 'boolean',
             default: false,
           },
+          {
+            name: 'opening_hours',
+            type: 'varchar',
+          },
         ],
       }),
     );
