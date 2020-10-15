@@ -144,6 +144,16 @@ export const Container = styled(motion.div)`
             border: 1px solid #a1e9c5;
             color: #37c77f;
           }
+
+          div.open-on-weekends.dont-open {
+            background: linear-gradient(
+              154.16deg,
+              #fdf0f5 7.85%,
+              #ffffff 91.03%
+            );
+            border: 1px solid #ffbcd4;
+            color: #ff669d;
+          }
         }
 
         button.contact-button {

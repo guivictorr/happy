@@ -15,7 +15,7 @@ const Routes: React.FC = () => {
         <Route path="/" exact component={Landing} />
         <Route path="/orphanages/map" exact component={OrphanagesMap} />
         <Route path="/orphanages/create" exact component={CreateOrphanages} />
-        <Route path="/orphanages/details" exact component={Orphanages} />
+        <Route path="/orphanages/details/:id" exact component={Orphanages} />
       </Switch>
     </AnimatePresence>
   );
