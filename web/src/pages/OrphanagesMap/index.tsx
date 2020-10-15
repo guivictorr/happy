@@ -12,7 +12,7 @@ import { animations } from '../../animations';
 import mapMarker from '../../assets/images/mapmarker.svg';
 
 const OrphanagesMap: React.FC = () => {
-  const { slideFromRight, opacity } = animations;
+  const { slideFromLeft, opacity, jumpLoop } = animations;
 
   const mapIcon = Leaflet.icon({
     iconUrl: mapMarker,
@@ -23,9 +23,14 @@ const OrphanagesMap: React.FC = () => {
 
   return (
     <Container initial="initial" animate="final" exit="exit" variants={opacity}>
-      <motion.aside initial="initial" animate="final" variants={slideFromRight}>
+      <motion.aside initial="initial" animate="final" variants={slideFromLeft}>
         <header>
-          <img src={mapMarker} alt="Happy" />
+          <motion.img
+            variants={jumpLoop}
+            animate="animation"
+            src={mapMarker}
+            alt="Happy"
+          />
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando a sua visita</p>
         </header>
@@ -59,7 +64,7 @@ const OrphanagesMap: React.FC = () => {
         </Marker>
       </Map>
 
-      <Link to="/" className="add-orphanage">
+      <Link to="/create-orphanage" className="add-orphanage">
         <FiPlus size={32} color="#fff" />
       </Link>
     </Container>

@@ -31,7 +31,7 @@ export const animations = {
 
   slideFromRight: {
     initial: {
-      x: '-10vw',
+      x: '10vw',
       opacity: 0,
     },
 
@@ -47,7 +47,7 @@ export const animations = {
 
   slideFromLeft: {
     initial: {
-      x: '10vw',
+      x: '-10vw',
       opacity: 0,
     },
 
@@ -75,6 +75,16 @@ export const animations = {
     exit: {
       opacity: 0,
       transition: { ease: 'easeInOut' },
+    },
+  },
+
+  jumpLoop: {
+    animation: {
+      y: [0, -10],
+      transition: {
+        delay: 1,
+        yoyo: Infinity,
+      },
     },
   },
 };

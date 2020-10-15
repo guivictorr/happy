@@ -41,7 +41,8 @@
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "no-console": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-label-var": "off"
   },
   "settings": {
     "import/resolver": {
