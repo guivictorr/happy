@@ -7,6 +7,12 @@ export const Container = styled(motion.div)`
   main {
     flex: 1;
 
+    .leaflet-container {
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #d3e2e5;
+    }
+
     form {
       width: 700px;
       margin: 64px auto;
@@ -77,13 +83,28 @@ export const Container = styled(motion.div)`
           line-height: 28px;
         }
 
-        .new-image {
-          width: 100%;
-          height: 64px;
-          background: #f5f8fa;
-          border: 1px dashed #96d2f0;
-          border-radius: 20px;
-          cursor: pointer;
+        .images-container {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-gap: 16px;
+
+          .new-image {
+            height: 96px;
+            background: #f5f8fa;
+            border: 1px dashed #96d2f0;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          img {
+            width: 100%;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 20px;
+          }
         }
 
         .button-select {
