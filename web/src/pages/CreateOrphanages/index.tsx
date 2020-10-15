@@ -59,7 +59,7 @@ const CreateOrphanages: React.FC = () => {
 
         data.append('name', model.name);
         data.append('about', model.about);
-        data.append('instructions', model.name);
+        data.append('instructions', model.instructions);
         data.append('latitude', String(model.latitude));
         data.append('longitude', String(model.longitude));
         data.append('open_on_weekends', String(model.open_on_weekends));
