@@ -80,7 +80,7 @@ const CreateOrphanages: React.FC = () => {
           draggable: true,
         });
 
-        history.push('orphanages/map');
+        history.goBack();
       } catch (err) {
         toast.error('Preencha os campos', {
           position: 'top-right',
