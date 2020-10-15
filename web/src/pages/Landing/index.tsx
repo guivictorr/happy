@@ -45,7 +45,7 @@ const Landing: React.FC = () => {
           <span>Rio Grande do Norte</span>
         </motion.section>
 
-        <Link to="/orphanages">
+        <Link to="/map-orphanages">
           <FiArrowRight size={26} color="rgba(0,0,0,0.6)" />
         </Link>
       </motion.div>

@@ -57,7 +57,7 @@ const OrphanagesMap: React.FC = () => {
             maxWidth={240}
           >
             Exemplo
-            <Link to="/teste">
+            <Link to="/orphanages">
               <FiArrowRight size={20} color="#fff" />
             </Link>
           </Popup>
