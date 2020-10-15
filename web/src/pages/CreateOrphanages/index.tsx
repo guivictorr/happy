@@ -1,52 +1,21 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import L from 'leaflet';
-import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowLeft, FiPlus } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi';
 
-import mapMarkerImg from '../../assets/images/mapmarker.svg';
+import SideBar from '../../components/SideBar';
 
 import { Container } from './styles';
 import { animations } from '../../animations';
-
-const happyMapIcon = L.icon({
-  iconUrl: mapMarkerImg,
-
-  iconSize: [58, 68],
-  iconAnchor: [29, 68],
-  popupAnchor: [0, -60],
-});
+import mapIcon from '../../utils/mapIcon';
 
 const CreateOrphanages: React.FC = () => {
-  const { goBack } = useHistory();
-  const { slideFromLeft, opacity, slideFromTop } = animations;
+  const { opacity, slideFromTop } = animations;
 
   return (
     <Container initial="initial" animate="final" exit="exit" variants={opacity}>
-      <aside>
-        <motion.img
-          initial="initial"
-          animate="final"
-          exit="exit"
-          variants={slideFromLeft}
-          src={mapMarkerImg}
-          alt="Happy"
-        />
-
-        <motion.footer
-          initial="initial"
-          animate="final"
-          exit="exit"
-          variants={slideFromLeft}
-        >
-          <button type="button" onClick={goBack}>
-            <FiArrowLeft size={24} color="#FFF" />
-          </button>
-        </motion.footer>
-      </aside>
-
+      <SideBar />
       <main>
         <motion.form
           className="create-orphanage-form"
@@ -68,7 +37,7 @@ const CreateOrphanages: React.FC = () => {
 
               <Marker
                 interactive={false}
-                icon={happyMapIcon}
+                icon={mapIcon}
                 position={[-27.2092052, -49.6401092]}
               />
             </Map>

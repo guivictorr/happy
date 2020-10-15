@@ -13,9 +13,9 @@ const Routes: React.FC = () => {
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
         <Route path="/" exact component={Landing} />
-        <Route path="/map-orphanages" exact component={OrphanagesMap} />
-        <Route path="/create-orphanage" exact component={CreateOrphanages} />
-        <Route path="/orphanages" exact component={Orphanages} />
+        <Route path="/orphanages/map" exact component={OrphanagesMap} />
+        <Route path="/orphanages/create" exact component={CreateOrphanages} />
+        <Route path="/orphanages/details" exact component={Orphanages} />
       </Switch>
     </AnimatePresence>
   );

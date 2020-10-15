@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import 'leaflet/dist/leaflet.css';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import Leaflet from 'leaflet';
 
@@ -57,14 +56,14 @@ const OrphanagesMap: React.FC = () => {
             maxWidth={240}
           >
             Exemplo
-            <Link to="/orphanages">
+            <Link to="/orphanages/details/">
               <FiArrowRight size={20} color="#fff" />
             </Link>
           </Popup>
         </Marker>
       </Map>
 
-      <Link to="/create-orphanage" className="add-orphanage">
+      <Link to="/orphanages/create" className="add-orphanage">
         <FiPlus size={32} color="#fff" />
       </Link>
     </Container>

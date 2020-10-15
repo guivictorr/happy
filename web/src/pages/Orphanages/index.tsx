@@ -1,52 +1,20 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { FiClock, FiInfo, FiArrowLeft } from 'react-icons/fi';
+import { FiClock, FiInfo } from 'react-icons/fi';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import L from 'leaflet';
+
+import SideBar from '../../components/SideBar';
 
 import { Container } from './styles';
-
-import mapMarkerImg from '../../assets/images/mapmarker.svg';
 import { animations } from '../../animations';
-
-const happyMapIcon = L.icon({
-  iconUrl: mapMarkerImg,
-
-  iconSize: [58, 68],
-  iconAnchor: [29, 68],
-  popupAnchor: [0, -60],
-});
+import mapIcon from '../../utils/mapIcon';
 
 const Orphanages: React.FC = () => {
-  const { goBack } = useHistory();
-  const { slideFromTop, opacity, slideFromLeft } = animations;
+  const { slideFromTop, opacity } = animations;
 
   return (
     <Container initial="initial" animate="final" exit="exit" variants={opacity}>
-      <aside>
-        <motion.img
-          initial="initial"
-          animate="final"
-          exit="exit"
-          variants={slideFromLeft}
-          src={mapMarkerImg}
-          alt="Happy"
-        />
-
-        <motion.footer
-          initial="initial"
-          animate="final"
-          exit="exit"
-          variants={slideFromLeft}
-        >
-          <button type="button" onClick={goBack}>
-            <FiArrowLeft size={24} color="#FFF" />
-          </button>
-        </motion.footer>
-      </aside>
-
       <motion.main initial="initial" animate="final" variants={slideFromTop}>
         <div className="orphanage-details">
           <img
@@ -116,7 +84,7 @@ const Orphanages: React.FC = () => {
                 />
                 <Marker
                   interactive={false}
-                  icon={happyMapIcon}
+                  icon={mapIcon}
                   position={[-27.2092052, -49.6401092]}
                 />
               </Map>
@@ -155,6 +123,7 @@ const Orphanages: React.FC = () => {
           </div>
         </div>
       </motion.main>
+      <SideBar />
     </Container>
   );
 };
