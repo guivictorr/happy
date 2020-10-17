@@ -73,7 +73,7 @@ export const Separator = styled.View`
   height: 0.8px;
   width: 100%;
   background-color: #d3e2e6;
-  margin: 0 40px;
+  margin: 40px 0;
 `;
 
 export const ScheduleContainer = styled.View`

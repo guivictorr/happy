@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
-  background: #111111;
+  flex: 1;
 `;
 
 export const MarkerInfo = styled.View`

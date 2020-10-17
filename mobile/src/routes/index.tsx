@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Landing from '../pages/Landing';
 import OrphanageDetails from '../pages/OrphanageDetails';
 import CreateOrphanage from '../pages/CreateOrphanage';
+import SelectMapPosition from '../pages/SelectMapPosition';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -21,6 +22,7 @@ const Routes: React.FC = () => {
         name="Landing"
         component={Landing}
         options={{
+          headerShown: false,
           header: () => <Header title="Exemplo" />,
         }}
       />
@@ -35,7 +37,14 @@ const Routes: React.FC = () => {
         name="CreateOrphanage"
         component={CreateOrphanage}
         options={{
-          header: () => <Header title="Exemplo" />,
+          header: () => <Header title="Exemplo" closeButton />,
+        }}
+      />
+      <Screen
+        name="SelectMapPosition"
+        component={SelectMapPosition}
+        options={{
+          header: () => <Header title="Exemplo" closeButton />,
         }}
       />
     </Navigator>

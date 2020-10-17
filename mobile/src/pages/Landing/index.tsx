@@ -17,7 +17,6 @@ import mapMarker from '../../assets/images/Local.png';
 
 const Landing: React.FC = () => {
   const navigation = useNavigation();
-
   return (
     <Container>
       <MapView
@@ -54,7 +53,7 @@ const Landing: React.FC = () => {
 
       <Footer style={{ elevation: 2 }}>
         <FooterText>2 Orfanatos encontrados</FooterText>
-        <FooterButton onPress={() => navigation.navigate('CreateOrphanage')}>
+        <FooterButton onPress={() => navigation.navigate('SelectMapPosition')}>
           <Feather name="plus" size={20} color="#FFF" />
         </FooterButton>
       </Footer>
