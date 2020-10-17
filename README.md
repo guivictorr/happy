@@ -6,6 +6,9 @@
   Um experiência online e totalmente gratuita para evoluir suas habilidades em programação e colocar mais um trabalho completo no seu portfolio.
 </p>
 
+## 🔎 Veja como ficou
+- [Deploy](https://happy-blush.vercel.app/)
+
 ## 💅 Layout
 
 - [Layout Web](https://www.figma.com/file/HQccUZfXuT5m3vYGzvALre/Happy-Web-(Copy)?node-id=0%3A1)
