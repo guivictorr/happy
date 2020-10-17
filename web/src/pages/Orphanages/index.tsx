@@ -127,8 +127,6 @@ const Orphanages: React.FC = () => {
             <div className="open-details">
               <div className="hour">
                 <FiClock size={32} color="#15B6D6" />
-                Segunda à Sexta
-                <br />
                 {orphanageData.opening_hours}
               </div>
               {orphanageData.open_on_weekends ? (

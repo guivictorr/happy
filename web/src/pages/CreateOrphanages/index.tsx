@@ -82,7 +82,7 @@ const CreateOrphanages: React.FC = () => {
 
         history.goBack();
       } catch (err) {
-        toast.error('Preencha os campos', {
+        toast.error('Erro ao enviar o formulário', {
           position: 'top-right',
           autoClose: 1500,
           hideProgressBar: true,
