@@ -2,6 +2,7 @@ import React from 'react';
 import { Dimensions } from 'react-native';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
@@ -15,6 +16,8 @@ import {
 import mapMarker from '../../assets/images/Local.png';
 
 const Landing: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <MapView
@@ -38,7 +41,10 @@ const Landing: React.FC = () => {
           icon={mapMarker}
           coordinate={{ latitude: -25.0624387, longitude: -49.5468973 }}
         >
-          <Callout tooltip>
+          <Callout
+            tooltip
+            onPress={() => navigation.navigate('OrphanageDetails')}
+          >
             <MarkerInfo>
               <MarkerInfoText>Exemplo</MarkerInfoText>
             </MarkerInfo>
@@ -48,7 +54,7 @@ const Landing: React.FC = () => {
 
       <Footer style={{ elevation: 2 }}>
         <FooterText>2 Orfanatos encontrados</FooterText>
-        <FooterButton>
+        <FooterButton onPress={() => navigation.navigate('CreateOrphanage')}>
           <Feather name="plus" size={20} color="#FFF" />
         </FooterButton>
       </Footer>
