@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 interface ScheduleItemProps {
@@ -20,7 +19,6 @@ export const ImagesContainer = styled.View`
 `;
 
 export const Img = styled.Image`
-  width: ${Dimensions.get('window').width};
   height: 240px;
 `;
 
@@ -58,7 +56,7 @@ export const MapContainer = styled.View`
   background-color: #e6f7fb;
 `;
 
-export const RoutesContainer = styled.View`
+export const RoutesContainer = styled(RectButton)`
   padding: 16px;
   align-items: center;
   justify-content: center;

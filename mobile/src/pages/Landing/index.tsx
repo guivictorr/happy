@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Dimensions } from 'react-native';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+
+import api from '../../services/api';
 
 import {
   Container,
@@ -15,8 +17,28 @@ import {
 
 import mapMarker from '../../assets/images/Local.png';
 
+interface OrphanagesDataProps {
+  latitude: number;
+  longitude: number;
+  name: string;
+  id: string;
+}
+
 const Landing: React.FC = () => {
+  const [orphanagesData, setOrphanagesData] = useState<OrphanagesDataProps[]>(
+    [],
+  );
   const navigation = useNavigation();
+
+  const handleOrphanagesData = useCallback(async () => {
+    const { data } = await api.get('orphanages');
+    setOrphanagesData(data);
+  }, []);
+
+  useEffect(() => {
+    handleOrphanagesData();
+  }, []);
+
   return (
     <Container>
       <MapView
@@ -26,33 +48,43 @@ const Landing: React.FC = () => {
           height: Dimensions.get('window').height,
         }}
         initialRegion={{
-          latitude: -25.0624387,
-          longitude: -49.5468973,
-          latitudeDelta: 0.008,
-          longitudeDelta: 0.008,
+          latitude: -5.815382,
+          longitude: -35.2214477,
+          latitudeDelta: 0.13,
+          longitudeDelta: 0.13,
         }}
       >
-        <Marker
-          calloutAnchor={{
-            x: 2.7,
-            y: 0.8,
-          }}
-          icon={mapMarker}
-          coordinate={{ latitude: -25.0624387, longitude: -49.5468973 }}
-        >
-          <Callout
-            tooltip
-            onPress={() => navigation.navigate('OrphanageDetails')}
+        {orphanagesData.map(orphanage => (
+          <Marker
+            key={orphanage.id}
+            calloutAnchor={{
+              x: 2.7,
+              y: 0.8,
+            }}
+            icon={mapMarker}
+            coordinate={{
+              latitude: orphanage.latitude,
+              longitude: orphanage.longitude,
+            }}
           >
-            <MarkerInfo>
-              <MarkerInfoText>Exemplo</MarkerInfoText>
-            </MarkerInfo>
-          </Callout>
-        </Marker>
+            <Callout
+              tooltip
+              onPress={() =>
+                navigation.navigate('OrphanageDetails', {
+                  orphanageId: orphanage.id,
+                })
+              }
+            >
+              <MarkerInfo>
+                <MarkerInfoText>{orphanage.name}</MarkerInfoText>
+              </MarkerInfo>
+            </Callout>
+          </Marker>
+        ))}
       </MapView>
 
       <Footer style={{ elevation: 2 }}>
-        <FooterText>2 Orfanatos encontrados</FooterText>
+        <FooterText>{`${orphanagesData.length} Orfanatos encontrados`}</FooterText>
         <FooterButton onPress={() => navigation.navigate('SelectMapPosition')}>
           <Feather name="plus" size={20} color="#FFF" />
         </FooterButton>
