@@ -63,11 +63,20 @@ cd backend && yarn install
 cd web && yarn install
 cd mobile && yarn install
 
+## 4. Colocar suas configurações do banco de dados
+cd backend 
+ormconfig.json (Mudar as configurações)
+
 ## 4. Rodar a aplicação
-cd backend && yarn dev
-cd web && yarn start
-cd mobile && yarn start
+cd backend && yarn dev (http://localhost:1337)
+cd web && yarn start (http://localhost:3000)
+cd mobile && yarn start (Escanear o QR CODE com o aplicativo do Expo)
 ```
+
+## 🐛 Issues
+Se as imagens não carregarem no mobile, será necessário mudar 
+[o link da linha 7](https://github.com/guivictorr/happy/blob/master/backend/src/views/images_view.ts)
+de http://localhost:1337 para o link que está acima do QR CODE na página do Expo
 
 ## 🤔 Como contribuir
 
