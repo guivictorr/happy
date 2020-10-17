@@ -30,21 +30,21 @@ const Routes: React.FC = () => {
         name="OrphanageDetails"
         component={OrphanageDetails}
         options={{
-          header: () => <Header title="Exemplo" closeButton />,
+          header: () => <Header title="Detalhes do orfanato" />,
         }}
       />
       <Screen
         name="CreateOrphanage"
         component={CreateOrphanage}
         options={{
-          header: () => <Header title="Exemplo" closeButton />,
+          header: () => <Header title="Informações do orfanato" closeButton />,
         }}
       />
       <Screen
         name="SelectMapPosition"
         component={SelectMapPosition}
         options={{
-          header: () => <Header title="Exemplo" closeButton />,
+          header: () => <Header title="Onde está o orfanato ?" />,
         }}
       />
     </Navigator>

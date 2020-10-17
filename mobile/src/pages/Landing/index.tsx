@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Dimensions } from 'react-native';
+
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 
 import api from '../../services/api';
 
@@ -35,9 +36,9 @@ const Landing: React.FC = () => {
     setOrphanagesData(data);
   }, []);
 
-  useEffect(() => {
+  useFocusEffect(() => {
     handleOrphanagesData();
-  }, []);
+  });
 
   return (
     <Container>

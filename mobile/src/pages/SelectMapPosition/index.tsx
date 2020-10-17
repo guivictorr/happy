@@ -1,43 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { MapEvent, Marker } from 'react-native-maps';
 
 import mapMarkerImg from '../../assets/images/Local.png';
 
 import { Container, NextButton, NextButtonText } from './styles';
 
 const SelectMapPosition: React.FC = () => {
+  const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
+
   const navigation = useNavigation();
 
   function handleNextStep() {
-    navigation.navigate('CreateOrphanage');
+    navigation.navigate('CreateOrphanage', { position });
+  }
+
+  function handleMapPosition(event: MapEvent) {
+    setPosition(event.nativeEvent.coordinate);
   }
 
   return (
     <Container>
       <MapView
+        onPress={handleMapPosition}
         initialRegion={{
-          latitude: -27.2092052,
-          longitude: -49.6401092,
-          latitudeDelta: 0.008,
-          longitudeDelta: 0.008,
+          latitude: -5.815382,
+          longitude: -35.2214477,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
         }}
         style={{
           width: Dimensions.get('window').width,
           height: Dimensions.get('window').height,
         }}
       >
-        <Marker
-          icon={mapMarkerImg}
-          coordinate={{ latitude: -27.2092052, longitude: -49.6401092 }}
-        />
+        {position.latitude !== 0 && (
+          <Marker
+            icon={mapMarkerImg}
+            coordinate={{
+              latitude: position.latitude,
+              longitude: position.longitude,
+            }}
+          />
+        )}
       </MapView>
 
-      <NextButton onPress={handleNextStep}>
-        <NextButtonText>Próximo</NextButtonText>
-      </NextButton>
+      {position.latitude !== 0 && (
+        <NextButton onPress={handleNextStep}>
+          <NextButtonText>Próximo</NextButtonText>
+        </NextButton>
+      )}
     </Container>
   );
 };

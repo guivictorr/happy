@@ -59,3 +59,14 @@ export const NextButtonText = styled.Text`
   font-size: 16px;
   color: #fff;
 `;
+
+export const UploadedImages = styled.View`
+  flex-direction: row;
+`;
+export const UploadedImage = styled.Image`
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+  margin-right: 8px;
+`;
