@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   padding: 24px;
@@ -16,5 +15,3 @@ export const HeaderText = styled.Text`
   color: #8fa7b3;
   font-size: 16px;
 `;
-
-export const BackButton = styled(BorderlessButton)``;

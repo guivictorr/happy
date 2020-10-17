@@ -13,20 +13,31 @@ const Routes: React.FC = () => {
   return (
     <Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         cardStyle: { backgroundColor: '#f2f3f5' },
       }}
     >
-      <Screen name="Landing" component={Landing} />
+      <Screen
+        name="Landing"
+        component={Landing}
+        options={{
+          header: () => <Header title="Exemplo" />,
+        }}
+      />
       <Screen
         name="OrphanageDetails"
         component={OrphanageDetails}
         options={{
-          headerShown: true,
+          header: () => <Header title="Exemplo" closeButton />,
+        }}
+      />
+      <Screen
+        name="CreateOrphanage"
+        component={CreateOrphanage}
+        options={{
           header: () => <Header title="Exemplo" />,
         }}
       />
-      <Screen name="CreateOrphanage" component={CreateOrphanage} />
     </Navigator>
   );
 };
