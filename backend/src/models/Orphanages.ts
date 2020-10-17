@@ -15,16 +15,16 @@ class Orphanages {
   @Column()
   name: string;
 
-  @Column('decimal')
+  @Column()
   latitude: number;
 
-  @Column('decimal')
+  @Column()
   longitude: number;
 
-  @Column('text')
+  @Column()
   about: string;
 
-  @Column('text')
+  @Column()
   instructions: string;
 
   @Column({ default: false })
