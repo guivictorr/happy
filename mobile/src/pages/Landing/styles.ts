@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   background: #111111;
@@ -39,7 +40,7 @@ export const FooterText = styled.Text`
   font-family: 'Nunito_700Bold';
 `;
 
-export const FooterButton = styled.TouchableOpacity`
+export const FooterButton = styled(RectButton)`
   width: 56px;
   height: 56px;
   background: #15c3d6;
