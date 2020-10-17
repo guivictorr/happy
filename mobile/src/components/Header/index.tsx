@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -24,12 +23,10 @@ const Header: React.FC<HeaderProps> = ({ title, closeButton }) => {
         <Feather name="arrow-left" color="#15b6d6" size={24} />
       </BorderlessButton>
       <HeaderText>{title}</HeaderText>
-      {closeButton ? (
+      {closeButton && (
         <BorderlessButton onPress={handleNavigationToLandingPage}>
           <Feather name="x" color="#ff669d" size={24} />
         </BorderlessButton>
-      ) : (
-        <View />
       )}
     </Container>
   );
