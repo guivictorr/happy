@@ -11,8 +11,8 @@
 
 ## 💅 Layout
 
-- [Layout Web](https://www.figma.com/file/HQccUZfXuT5m3vYGzvALre/Happy-Web-(Copy)?node-id=0%3A1)
-- [Layout Mobile](https://www.figma.com/file/n90wRP36uV41qpNsMNU73d/Happy-Mobile-(Copy))
+- [Layout Web](https://www.figma.com/file/NgRhz5NQOBd01bw3cK0feL/Happy-Web-(Copy)?node-id=0%3A1)
+- [Layout Mobile](https://www.figma.com/file/HXcHlbhxq1Eo5Cyd5aIgSQ/Happy-Mobile-(Copy))
 
 ## 🛠 Tecnologias
 
